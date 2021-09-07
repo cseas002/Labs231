@@ -1,7 +1,5 @@
 package cy.ac.ucy.cs.epl231.ID1028675.Lab01;
 
-import java.util.Comparator;
-
 public class IntegerSet {
     private final int SET_SIZE = 101;
     private final boolean[] set_elements; // holds a set of numbers from 0 to 100
