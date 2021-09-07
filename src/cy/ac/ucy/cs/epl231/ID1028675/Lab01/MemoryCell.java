@@ -1,11 +1,30 @@
-package Lab01;
+package cy.ac.ucy.cs.epl231.ID1028675.Lab01;
 
 public class MemoryCell<AnyType> {
 	// Private internal data representation
 	private AnyType storedValue;
 	//*** ADD YOUR CODE HERE ***//
-	
-	
+    public MemoryCell()
+    {
+
+    }
+
+    public MemoryCell(AnyType other)
+    {
+        this.storedValue = other;
+    }
+
+    public AnyType read()
+    {
+        return storedValue;
+    }
+
+    public void write(AnyType storeValue)
+    {
+        this.storedValue = storeValue;
+    }
+
+
 	public static void main(String[] args) {
 		MemoryCell<String> mc1; // mc1 is a reference to an object of type MemoryCell that holds a String
 		MemoryCell<Integer> mc2; // mc2 holds an Integer

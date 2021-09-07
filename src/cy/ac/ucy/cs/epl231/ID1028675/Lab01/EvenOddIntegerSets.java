@@ -1,4 +1,4 @@
-package Lab01;
+package cy.ac.ucy.cs.epl231.ID1028675.Lab01;
 
 public class EvenOddIntegerSets {
 
