@@ -1,14 +1,11 @@
-// JAVA recursive function to solve tower of hanoi puzzle
+package Lab02;// JAVA recursive function to solve tower of hanoi puzzle
 import java.util.*;
-import java.io.*;
-import java.math.*;
 public class TowersOfHanoi
 {
-final static int N = 5; // Number of disks
+final static int N = 10; // Number of disks
 static Stack<Integer> rodA = new Stack<>();
 static Stack<Integer> rodB = new Stack<>();
 static Stack<Integer> rodC = new Stack<>();
-static char[] rods = new char[3];
 static int count = 0; // count should be equal to 2^N - 1
 
 static void initializeRods()
@@ -55,36 +52,18 @@ static String printDots(int howMany)
 
 static void changeAndPrint(int from, int to)
 {
-	int movingRod = 0;
-	switch (from)
-		{
-			case 'A':
-			movingRod = rodA.pop();
-			break;
+	int movingRod = switch (from) {
+		case 'A' -> rodA.pop();
+		case 'B' -> rodB.pop();
+		case 'C' -> rodC.pop();
+		default -> 0;
+	};
 
-			case 'B':
-			movingRod = rodB.pop();
-			break;
-
-			case 'C':
-			movingRod = rodC.pop();
-			break;
-		}
-
-	switch (to)
-		{
-			case 'A':
-			rodA.push(movingRod);
-			break;
-
-			case 'B':
-			rodB.push(movingRod);
-			break;
-
-			case 'C':
-			rodC.push(movingRod);
-			break;
-		}
+	switch (to) {
+		case 'A' -> rodA.push(movingRod);
+		case 'B' -> rodB.push(movingRod);
+		case 'C' -> rodC.push(movingRod);
+	}
 
 	// Cloning rods
 	Stack<Integer> rodATemp = (Stack<Integer>)rodA.clone();
@@ -135,7 +114,7 @@ static void towerOfHanoi(int n, char from_rod,
 }
  
 // Driver code
-public static void  main(String args[])
+public static void  main(String[] args)
 {
     initializeRods();
     changeAndPrint('A', 'A');
