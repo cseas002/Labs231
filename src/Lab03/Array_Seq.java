@@ -3,7 +3,7 @@ package Lab03;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Array_Seq <X> implements Sequence<X> {
+class Array_Seq <X> implements Sequence<X> {
     public static final int MAXSIZE = 10000;
     private X[] A;
     int size;
