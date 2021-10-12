@@ -159,16 +159,16 @@ class Array_Seq<E extends Iterable<X>, X extends Number> implements Sequence<E, 
     }
 
     void reverse(int i, int k) {
-        for (int j = i; j < i + (k - i) / 2; j++) {
-            X temp = delete_at(j);
-            insert_at(j, delete_at(i + k - j));
-            insert_at(i + k - j, temp);
+        for (int j = i; j <= i + (k - i) / 2; j++) {
+            X temp = get_at(j);
+            set_at(j, get_at(i + k - j));
+            set_at(i + k - j, temp);
         }
     }
 
-    void move(int i, int k, int j) {
-        for (int h = i; h < i + k; h++)
-            insert_at(j - 1, delete_at(h));
+    void move(int from, int to, int behindOf) {
+        for (int h = from; h < from + to; h++)
+            insert_at(behindOf - 1, delete_at(h));
     }
 
     public static void main(String[] args) {
@@ -209,6 +209,10 @@ class Array_Seq<E extends Iterable<X>, X extends Number> implements Sequence<E, 
             System.out.print(a + ",");
         System.out.println("\nAfter reversing from 4th to 7th place:");
         as.reverse(3, 6);
+        for (Object a : as.iter_seq())
+            System.out.print(a + ",");
+        System.out.println("\nAfter moving from 5th to 7th place behind of 4th place:");
+        as.move(4, 6, 3);
         for (Object a : as.iter_seq())
             System.out.print(a + ",");
     }
