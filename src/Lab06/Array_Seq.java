@@ -1,4 +1,4 @@
-package cy.ac.ucy.cs.epl231.Lab6;
+package Lab06;
 
 import java.util.ArrayList;
 import java.util.List;

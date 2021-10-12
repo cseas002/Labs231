@@ -1,4 +1,4 @@
-package cy.ac.ucy.cs.epl231.Lab6;
+package Lab06;
 
 public class Item<K extends Comparable<? super K>,X> {
 	public K key;
