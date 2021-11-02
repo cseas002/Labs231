@@ -3,7 +3,7 @@ package Lab06;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Sorted_Array_Set<E extends Iterable<X>, X extends Item<K, ?>, K extends Comparable<? super K>> implements Set<E, X, K> {
+class Sorted_Array_Set<E extends Iterable<X>, X extends Item<K, ?>, K extends Comparable<? super K>> implements Set<E, X, K> {
     Sequence<E, X, K> A;
 
     /*def __init__(self): self.A = Array_Seq() # O(1)	*/

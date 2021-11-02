@@ -3,7 +3,7 @@ package Lab06;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Array_Seq<E extends Iterable<X>, X extends Item<K,?>, K extends Comparable<? super K>> implements Sequence<E, X, K> {
+class Array_Seq<E extends Iterable<X>, X extends Item<K,?>, K extends Comparable<? super K>> implements Sequence<E, X, K> {
 	//public static final int MAXSIZE = 1000;
 	protected X[] A;  
 	int size;

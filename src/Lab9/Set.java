@@ -1,4 +1,4 @@
-package Lab06;
+package Lab9;
 
 /**
  * 
@@ -28,17 +28,17 @@ package Lab06;
  */
 
 interface Set<E extends Iterable<?>, X extends Item<K,?>, K extends Comparable<? super K>> {
-	void build(E e);		// given an iterable X, build set from items in X
-	int len();	 		//return the number of stored items
+	public void build(E e);		// given an iterable X, build set from items in X
+	public int len();	 		//return the number of stored items
 //-- Static  ---------------------------------------------------------------------------------
-X find(K key);		//return the stored item with key k
+	public X find(K key);		//return the stored item with key k
 //-- Dynamic ---------------------------------------------------------------------------------
-void insert(X x); 	//add x to set (replace item with key x.key if one already exists)
-	X delete(K key); 	//remove and return the stored item with key k
+	public void insert(X x); 	//add x to set (replace item with key x.key if one already exists)
+	public X delete(K key); 	//remove and return the stored item with key k
 //--- Order  ---------------------------------------------------------------------------------
-E iter_ord(); 		//return the stored items one-by-one in key order
-	X find_min(); 		//return the stored item with the smallest key
-	X find_max(); 		//return the stored item with the largest key
-	X find_next(K key); 	//return the stored item with the smallest key larger than k
-	X find_prev(K key); 	//return the stored item with the largest key smaller than k
+	public E iter_ord(); 		//return the stored items one-by-one in key order
+	public X find_min(); 		//return the stored item with smallest key
+	public X find_max(); 		//return the stored item with largest key
+	public X find_next(K key); 	//return the stored item with smallest key larger than k
+	public X find_prev(K key); 	//return the stored item with largest key smaller than k
 }

@@ -1,4 +1,4 @@
-package Lab06;
+package Lab9;
 
 class Item<K extends Comparable<? super K>,X> {
 	public K key;

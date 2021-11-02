@@ -1,4 +1,4 @@
-package Lab06;
+package Lab9;
 /**
  * Sequence Interface (L02, L07)
  * Sequences maintain a collection of items in an extrinsic order, where each item stored has a rank
