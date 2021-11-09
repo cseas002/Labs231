@@ -15,16 +15,24 @@ public class Hash_Table<E extends Iterable<X>, X extends Item<K, ?>, K extends C
 	}
 
 	private int _hash(int k) {
-		/** ADD YOUR CODE HERE **/
-		return 0;
+		return (10 * k + 4) % 7;
 	}
 
 	public void insert(X x) {
-		/** ADD YOUR CODE HERE **/
+		int hash = _hash((int) x.key);
+		System.out.println("K: " + x.key + " hash " + hash);
+		if (A[hash] == null)
+			A[hash] = new Link_List_Seq<>();
+		A[hash].insert_last(x);
+		size++;
 	}
 
 	public X find(K key) {
-		/** ADD YOUR CODE HERE **/
+		int hash = _hash((int) key);
+		X a = null;
+		int i = 0;
+		if (A[hash] != null && A[hash].len() > 0)
+			a = A[hash].get_at(i);
 		return null;
 	}
 
@@ -39,7 +47,7 @@ public class Hash_Table<E extends Iterable<X>, X extends Item<K, ?>, K extends C
 		return h;
 	}
 
-	void partBCollitionTest(Hash_Table<E, X, K> ht) {
+	void partBCollisionTest(Hash_Table<E, X, K> ht) {
 		/** ADD YOUR CODE HERE **/
 	}
 
@@ -56,6 +64,6 @@ public class Hash_Table<E extends Iterable<X>, X extends Item<K, ?>, K extends C
 		for (Object a : ht.iter_ord())
 			System.out.print(a + ",");
 		System.out.println("");
-		ht.partBCollitionTest(ht);
+		ht.partBCollisionTest(ht);
 	}
 }
